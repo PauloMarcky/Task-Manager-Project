@@ -4,42 +4,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TO DO LIST</title>
 </head>
 
 <body style="background-color: rgb(202, 202, 202);">
   <h1 style="font-family: 'Franklin Gothic Medium'">TO DO LIST</h1>
-  <input type="text" id="input-element" placeholder="Enter task">
+  <input style="border: none;" type="text" id="input-js" placeholder="Enter task">
   <button
-    style="background-color: rgb(133, 234, 133); height: 20px; width: 60px; border: 1px solid rgb(0, 144, 14); font-family: 'Franklin Gothic Medium'"
-    id="add-button">ADD
+    style="background-color: rgb(133, 234, 133); height: 19px; width: 59px; border: 1px solid rgb(0, 0, 0); font-family: 'Franklin Gothic Medium'"
+    id="js-add-button">ADD
   </button>
   <button
-    style="background-color: rgb(217, 63, 63); height: 20px; width: 60px; border: 1px solid rgb(137, 0, 0); font-family: 'Franklin Gothic Medium'"
-    id="delete-button">DELETE
+    style="background-color: rgb(217, 63, 63); height: 19px; width: 59px; border: 1px solid rgb(0, 0, 0); font-family: 'Franklin Gothic Medium'"
+    id="js-delete-button">DELETE
   </button>
+  <div style="font-family: 'Franklin Gothic Medium';
+              font-weight: bold;
+              " id="js-display-tasks">
+    <br>
+  </div>
 </body>
 
 <script>
 
-  js_add_btn = document.querySelector("#add-button");
-  js_delete_btn = document.querySelector("#delete-button");
-  js_input_task = document.querySelector("#input-element");
+  element_add_btn = document.querySelector("#js-add-button");
+  element_delete_btn = document.querySelector("#js-delete-button");
+  element_input_task = document.querySelector("#input-js");
 
   // algorith
   // > get input
   // > put input into array
   // > display array
 
-  let task = [];
+  let tasks = [];
+  let html_list = '';
 
-  function task_getter() {
-    task = js_input_task.value;
-    console.log(task);
+  function task_add() {
+    const list = element_input_task.value;
+    tasks.push(list);
+    console.log(tasks);
   }
 
-  js_add_btn.onclick = function () {
-    task_getter();
+  function task_display() {
+    for (let i = 0; i < tasks.length; i++) {
+      const list = tasks[i];
+      const html = `<p>${list}</p>`;
+      html_list = html;
+      console.log(html_list)
+    }
+  }
+
+
+
+  element_add_btn.onclick = function () {
+    task_add();
+    task_display();
+    document.querySelector("#js-display-tasks")
+      .innerHTML += html_list;
   }
 
 </script>
