@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body style="background-color: rgb(202, 202, 202);">
+  <h1 style="font-family: 'Franklin Gothic Medium'">TO DO LIST</h1>
+  <input type="text" id="input-element" placeholder="Enter task">
+  <button
+    style="background-color: rgb(133, 234, 133); height: 20px; width: 60px; border: 1px solid rgb(0, 144, 14); font-family: 'Franklin Gothic Medium'"
+    id="add-button">ADD
+  </button>
+  <button
+    style="background-color: rgb(217, 63, 63); height: 20px; width: 60px; border: 1px solid rgb(137, 0, 0); font-family: 'Franklin Gothic Medium'"
+    id="delete-button">DELETE
+  </button>
+</body>
+
+<script>
+
+  js_add_btn = document.querySelector("#add-button");
+  js_delete_btn = document.querySelector("#delete-button");
+  js_input_task = document.querySelector("#input-element");
+
+  // algorith
+  // > get input
+  // > put input into array
+  // > display array
+
+  let task = [];
+
+  function task_getter() {
+    task = js_input_task.value;
+    console.log(task);
+  }
+
+  js_add_btn.onclick = function () {
+    task_getter();
+  }
+
+</script>
+
+</html>
