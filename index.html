@@ -14,10 +14,6 @@
     style="background-color: rgb(133, 234, 133); height: 19px; width: 59px; border: 1px solid rgb(0, 0, 0); font-family: 'Franklin Gothic Medium'"
     id="js-add-button">ADD
   </button>
-  <button
-    style="background-color: rgb(217, 63, 63); height: 19px; width: 59px; border: 1px solid rgb(0, 0, 0); font-family: 'Franklin Gothic Medium'"
-    id="js-delete-button">DELETE
-  </button>
   <div style="font-family: 'Franklin Gothic Medium';
               font-weight: bold;
               " id="js-display-tasks">
@@ -28,8 +24,7 @@
 <script>
 
   element_add_btn = document.querySelector("#js-add-button");
-  element_delete_btn = document.querySelector("#js-delete-button");
-  element_input_task = document.querySelector("#input-js"); exit
+  element_input_task = document.querySelector("#input-js");
 
   // algorith
   // > get input
@@ -46,12 +41,20 @@
   }
 
   function task_display() {
+
     for (let i = 0; i < tasks.length; i++) {
       const list = tasks[i];
-      const html = `<p>${list}</p>`;
+      const html =
+        `<p>
+          ${list} 
+          <button style="background-color: red; border: 1px solid black; font-weight: bold;" onclick = "
+            tasks.splice(${i}, 1)
+            ;
+          ;">DELETE</button>
+        </p>`;
       html_list = html;
-      console.log(html_list)
     }
+
   }
 
 
