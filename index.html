@@ -8,64 +8,27 @@
 </head>
 
 <body style="background-color: rgb(202, 202, 202);">
+
   <h1 style="font-family: 'Franklin Gothic Medium'">TO DO LIST</h1>
-  <input style="border: none;" type="text" id="input-js" placeholder="Enter task">
+
+  <input style="border: none; height: 28px; width: 250px; font-size: 1em;" type="text" id="input-js"
+    placeholder="Enter task">
+
+  <input style="height: 30px; width: 120px; font-size: 1.2em; text-align: center; border: none;" type="date"
+    id="date-input-js">
+
   <button
-    style="background-color: rgb(133, 234, 133); height: 19px; width: 59px; border: 1px solid rgb(0, 0, 0); font-family: 'Franklin Gothic Medium'"
-    id="js-add-button">ADD
+    style="background-color: rgb(133, 234, 133); height: 50px; width: 150px; font-size: 1.2em; text-align: center; border: 1px solid rgb(137, 137, 137); font-family: 'Franklin Gothic Medium'; margin-left: 10px; border-radius: 7px;"
+    id="js-add-button">ADD TASK
   </button>
-  <div style="font-family: 'Franklin Gothic Medium';
-              font-weight: bold;
-              " id="js-display-tasks">
-    <br>
+
+  <div
+    style="font-family: 'Franklin Gothic Medium';
+              display: grid; grid-template-columns: 150px 150px 100px; text-align: left; align-items: center; margin-top: 20px; row-gap: 10px;"
+    id="js-display-tasks">
   </div>
 </body>
 
-<script>
-
-  element_add_btn = document.querySelector("#js-add-button");
-  element_input_task = document.querySelector("#input-js");
-
-  // algorith
-  // > get input
-  // > put input into array
-  // > display array
-
-  let tasks = [];
-  let html_list = '';
-
-  function task_add() {
-    const list = element_input_task.value;
-    tasks.push(list);
-    console.log(tasks);
-  }
-
-  function task_display() {
-
-    for (let i = 0; i < tasks.length; i++) {
-      const list = tasks[i];
-      const html =
-        `<p>
-          ${list} 
-          <button style="background-color: red; border: 1px solid black; font-weight: bold;" onclick = "
-            tasks.splice(${i}, 1)
-            ;
-          ;">DELETE</button>
-        </p>`;
-      html_list = html;
-    }
-
-  }
-
-
-
-  element_add_btn.onclick = function () {
-    task_add();
-    task_display();
-    document.querySelector("#js-display-tasks")
-      .innerHTML += html_list;
-  }
-
-</script>
+<script src="TL.js"></script>
 
 </html>
