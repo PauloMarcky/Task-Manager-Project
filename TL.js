@@ -31,9 +31,9 @@ function task_display() {
   for (let i = 0; i < tasks.length; i++) {
     element_display.innerHTML += `
       
-      <div>${tasks[i]}</div>
-      <div>${dates[i]}</div>
-      <button style="background-color: tomato; border: 1px solid rgb(137, 137, 137);     font-weight: bold; height:40px; width: 100px; border-radius:7px;"
+      <p style="width:250px;">${tasks[i]}</p>
+      <p style="width:120px;">${dates[i]}</p>
+      <button style="background-color: tomato; border: 1px solid rgb(137, 137, 137);     font-weight: bold; height:50px; width: 150px; border-radius:7px; font-size:1.2em;"
           onclick ="task_delete(${i})
         ">DELETE</button>
       `;

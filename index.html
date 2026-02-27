@@ -10,21 +10,21 @@
 <body style="background-color: rgb(202, 202, 202);">
 
   <h1 style="font-family: 'Franklin Gothic Medium'">TO DO LIST</h1>
+  <div style="display: grid; grid-template-columns: 260px 130px 160px; align-items: center;">
+    <input style="border: none; height: 28px; width: 250px; font-size: 1em;" type="text" id="input-js"
+      placeholder="Enter task">
 
-  <input style="border: none; height: 28px; width: 250px; font-size: 1em;" type="text" id="input-js"
-    placeholder="Enter task">
+    <input style="height: 30px; width: 120px; font-size: 1.2em; text-align: center; border: none;" type="date"
+      id="date-input-js">
 
-  <input style="height: 30px; width: 120px; font-size: 1.2em; text-align: center; border: none;" type="date"
-    id="date-input-js">
-
-  <button
-    style="background-color: rgb(133, 234, 133); height: 50px; width: 150px; font-size: 1.2em; text-align: center; border: 1px solid rgb(137, 137, 137); font-family: 'Franklin Gothic Medium'; margin-left: 10px; border-radius: 7px;"
-    id="js-add-button">ADD TASK
-  </button>
-
+    <button
+      style="background-color: rgb(133, 234, 133); height: 50px; width: 150px; font-size: 1.2em; text-align: center; border: 1px solid rgb(137, 137, 137); font-family: 'Franklin Gothic Medium'; margin-left: 10px; border-radius: 7px;"
+      id="js-add-button">ADD TASK
+    </button>
+  </div>
   <div
     style="font-family: 'Franklin Gothic Medium';
-              display: grid; grid-template-columns: 150px 150px 100px; text-align: left; align-items: center; margin-top: 20px; row-gap: 10px;"
+              display: grid; grid-template-columns: 260px 130px 160px; text-align: left; align-items: center; margin-top: 20px; row-gap: 10px; margin-left: 10px;"
     id="js-display-tasks">
   </div>
 </body>
